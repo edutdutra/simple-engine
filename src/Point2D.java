@@ -12,9 +12,32 @@ public class Point2D {
         y = y+ty;
     }
 
-    public void scale(float sx, float sy) {
-        x = x*sx;
-        y = y*sy;
+    public void scale(float a, float b) {
+        float [][]pointsArray = new float[1][2];
+        float [][]scaleArray = new float[2][2];
+        float [][]resultArray = new float[1][2];
+
+        // points array data
+        pointsArray[0][0] = x;
+        pointsArray[0][1] = y;
+
+        // scale array data
+        scaleArray[0][0] = a;
+        scaleArray[0][1] = 0;
+        scaleArray[1][0] = 0;
+        scaleArray[1][1] = b;
+
+        for(int i=0;i<pointsArray.length;i++){
+            for(int j=0;j<pointsArray[i].length;j++){
+                resultArray[i][j] = pointsArray[i][j] * scaleArray[i][j];
+            }
+        }
+
+        for(int i=0;i<resultArray.length;i++) {
+            for (int j = 0; j < resultArray[i].length; j++) {
+                System.out.println("i + j: " + i + " + " + j + " = " + resultArray[i][j]);
+            }
+        }
     }
 
     public void rotation(float angle) {
