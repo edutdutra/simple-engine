@@ -10,6 +10,7 @@ public class Main {
         frame.setSize(canvas.width, canvas.height);
         frame.setVisible(true);
         frame.getContentPane().add(canvas);
+        frame.addKeyListener(canvas);
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
